@@ -1,0 +1,44 @@
+#Deploy AirFlow on Docker
+https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
+
+
+- To deploy Airflow on Docker Compose, you should fetch docker-compose.yaml.
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/3.1.7/docker-compose.yaml'
+
+- Setting the right Airflow user
+mkdir -p ./dags ./logs ./plugins ./config
+echo -e "AIRFLOW_UID=$(id -u)" > .env
+
+AIRFLOW_UID=50000 (for OSx?, not neccessary for win?)
+
+- Initialize the database
+docker compose up airflow-init
+
+- Running Airflow
+docker compose up
+
+
+-- Cleaning up
+To stop and delete containers, delete volumes with database data and download images, run:
+docker compose down --volumes --rmi all
+
+====================
+for this project:
+DB Server Name - ps_db
+database - models_db
+
+pgadmin server connection > Host name / address = "postgres" or `postgres IPAddress`
+
+Find `postgres IPAddress` -
+1- docker container ls --> get 'image id'
+2- docker inspect 'image id' --> get `postgres IPAddress`
+
+Airflow connect to db:
+manage > connection > add connection
+Conn_id: models_connection,, type: postgres,, Host: postgres,, database: etl_books
+Login: a..f,, pw: a..f
+
+
+FROM:
+https://www.youtube.com/watch?v=np9sxN7Qtp4
+
