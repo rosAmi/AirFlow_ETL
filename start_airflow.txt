@@ -27,12 +27,14 @@ for this project:
 DB Server Name - ps_db
 database - models_db
 
-pgadmin server connection > Host name / address = "postgres" or `postgres IPAddress`
+pgagmin -> localhost:5050
+pgadmin server connection > Host name/address = "postgres" or `postgres IPAddress`
 
-Find `postgres IPAddress` -
-1- docker container ls --> get 'image id'
-2- docker inspect 'image id' --> get `postgres IPAddress`
+[ Find `postgres IPAddress` -
+    1- docker container ls --> get 'image id'
+    2- docker inspect 'image id' --> get `postgres IPAddress`]
 
+Airflow -> localhost:5432
 Airflow connect to db:
 manage > connection > add connection
 Conn_id: models_connection,, type: postgres,, Host: postgres,, database: etl_books
