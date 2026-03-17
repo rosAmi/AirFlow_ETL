@@ -34,7 +34,7 @@ pgadmin server connection > Host name/address = "postgres" or `postgres IPAddres
     1- docker container ls --> get 'image id'
     2- docker inspect 'image id' --> get `postgres IPAddress`]
 
-Airflow -> localhost:5432
+Airflow -> localhost:8080
 Airflow connect to db:
 manage > connection > add connection
 Conn_id: models_connection,, type: postgres,, Host: postgres,, database: etl_books

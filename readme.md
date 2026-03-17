@@ -7,7 +7,7 @@ docker compose up
 
 ## interface connect:
 - pgagmin -> localhost:5050
-- Airflow -> localhost:5432
+- Airflow -> localhost:8080
 
 
 
