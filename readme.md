@@ -2,11 +2,12 @@
 
 url: https://huggingface.co/
 
-### Running Airflow
+## Running Airflow
 docker compose up
 
-pgagmin -> localhost:5050
-Airflow -> localhost:5432
+## interface connect:
+- pgagmin -> localhost:5050
+- Airflow -> localhost:5432
 
 
 
